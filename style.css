@@ -1,23 +1,30 @@
-:root{
+:root {
   --primary: #006064;
-  --secondary1: #00BFA5;
-  --secondary2: #69F0AE;
-  --tertiary: #80CBC4;
+  --secondary1: #00bfa5;
+  --secondary2: #69f0ae;
+  --tertiary: #80cbc4;
 }
-html{
-  width:100%;
-  
+
+html {
+  width: 100%;
 }
-body, main, div, h1, label, input, p, span{
+
+body,
+main,
+div,
+h1,
+label,
+input,
+p,
+span {
   font-family: nunito;
   margin: 5px;
   padding: 0;
-  
   width: 100%;
-height: 100%;
+  height: 100%;
 }
 
-main{
+main {
   color: var(--primary);
   width: 95%;
   padding: 40px;
@@ -25,31 +32,32 @@ main{
   margin-top: 2em;
 }
 
-h1, label{
+h1,
+label {
   width: 95%;
   font-weight: 800;
 }
 
-.superscript{
+.superscript {
   font-weight: 500;
   vertical-align: super;
   font-size: 0.9em;
   color: var(--secondary2);
 }
 
-.title{
+.title {
   font-size: 0.9em;
   float: left;
   margin-bottom: 1.5em;
 }
 
-.tagline{
+.tagline {
   color: var(--secondary1);
   font-size: 0.5em;
   line-height: 0.75em;
 }
 
-input{
+input {
   float: left;
   width: 95%;
   border: none;
@@ -57,41 +65,42 @@ input{
   margin-bottom: 2em;
 }
 
-input:focus{
+input:focus {
   outline: none;
 }
 
-input[placeholder]{
+input[placeholder] {
   font-size: 1em;
   color: var(--tertiary);
 }
 
-input[value]{
+input[value] {
   color: var(--secondary1);
 }
 
-label, .label{
+label,
+.label {
   font-weight: 900;
   font-size: 0.8em;
   float: left;
   margin-bottom: 1em;
 }
 
-input[type='number'] {
-    -moz-appearance:textfield;
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
-.output{
+.output {
   padding-top: 2em;
   clear: both;
 }
 
-.result{
+.result {
   font-size: 2em;
   font-weight: 900;
   color: var(--secondar1);
@@ -99,14 +108,49 @@ input::-webkit-inner-spin-button {
   margin-bottom: 0.5em;
 }
 
-#calc-result{
+#calc-result {
   font-weight: 900;
   color: var(--secondary2);
   font-size: 3.5em;
   line-height: 1em;
 }
 
-.note{
+.note {
   font-size: 1em;
   color: var(--tertiary);
+}
+
+/* CSS */
+.button-37 {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-37:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .button-37 {
+    padding: 10px 30px;
+  }
 }
