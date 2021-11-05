@@ -51,7 +51,7 @@
       <div class="output">
         <p class="label">Hike Percentage<span class="superscript">+</span></p>
         <p class="result"><span id="calc-result" /> %</p>
-        <p class="note">Congratualtions on getting Hike</p>
+        <p class="note" id = "opMessage" >Congratualtions on getting Hike</p>
 
         <button
           class="button-37"
@@ -71,6 +71,7 @@
     </main>
     <script>
           var calcDisplay = document.getElementById("calc-result");
+		  var opMessage = document.getElementById("opMessage");
           var currentSalaryVar = document.getElementById("current_salary");
           var revisedSalaryVar = document.getElementById("revised_salary");
 
@@ -78,7 +79,7 @@
           console.log(revisedSalaryVar.value);
 
           calcDisplay.textContent = "---";
-
+		  opMessage.textContent = "";
           function calcPercent() {
             var currentSalary = Number(currentSalaryVar.value);
             var revisedSalary = Number(revisedSalaryVar.value);
@@ -89,6 +90,12 @@
 			} else if (revisedSalary > 0 && currentSalary > 0) {
 				var percentIncrease = ((revisedSalary - currentSalary) / currentSalary) * 100;
 				calcDisplay.textContent = parseFloat(percentIncrease).toFixed(2) + "%";
+				if (percentIncrease > 0) {
+					opMessage.textContent = "Congratualtions on getting Hike";
+				} else {
+					opMessage.textContent = "Sorry, you are not getting Hike";
+				}
+	
 			} 
           }
 
@@ -101,4 +108,5 @@
           };
     </script>
   </body>
+  
 </html>
