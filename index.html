@@ -1,112 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito:400,900"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Simple Salary Increase Percentage Calculator</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
 
-  <body>
-    <main>
-      <h1>
-        <span class="tagline">Find your Hike %</span>
-        <span class="title">Salary Hike Percentage Calculator</span>
-      </h1>
+<head>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,900" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Simple Salary Increase Percentage Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
-      <div class="inputs">
-        <label for="currentSalary">Current Salary (CTC in LPA)</label>
-        <input
-          id="current_salary"
-          type="number"
-          name="currentSalary"
-          value=""
-          placeholder="What was your current salary?"
-          required
-          min="1"
-          max="1000000"
-          autocomplete="off"
-        />
-      </div>
+<body>
+  <main>
+    <h1>
+      <span class="tagline">Find your Hike %</span>
+      <span class="title">Salary Hike Percentage Calculator</span>
+    </h1>
 
-      <div class="inputs">
-        <label for="revisedSalary">Revised Salary (CTC in LPA)</label>
-        <input
-          id="revised_salary"
-          type="number"
-          name="revisedSalary"
-          value=""
-          placeholder="What's your revised salary?"
-          required
-          min="1"
-          max="1000000"
-          autocomplete="off"
-        />
-      </div>
+    <div class="inputs">
+      <label for="currentSalary">Current Salary (CTC in LPA)</label>
+      <input id="current_salary" type="number" name="currentSalary" value="" placeholder="What was your current salary?"
+        required min="1" autocomplete="off" />
+    </div>
 
-      <div class="output">
-        <p class="label">Hike Percentage<span class="superscript">+</span></p>
-        <p class="result"><span id="calc-result" /> %</p>
-        <p class="note" id = "opMessage" >Congratualtions on getting Hike</p>
+    <div class="inputs">
+      <label for="revisedSalary">Revised Salary (CTC in LPA)</label>
+      <input id="revised_salary" type="number" name="revisedSalary" value="" placeholder="What's your revised salary?"
+        required min="1" autocomplete="off" />
+    </div>
 
-        <button
-          class="button-37"
-          onclick="location.href ='https://github.com/Upendra-Thunuguntla';"
-          role="button"
-        >
-          <span class="text">My Github</span>
-        </button>
-        <button
-          class="button-37"
-          onclick="location.href ='https://Linkedin.com/muralid25';"
-          role="button"
-        >
-          <span class="text">My Linkedin</span>
-        </button>
-      </div>
-    </main>
-    <script>
-          var calcDisplay = document.getElementById("calc-result");
-		  var opMessage = document.getElementById("opMessage");
-          var currentSalaryVar = document.getElementById("current_salary");
-          var revisedSalaryVar = document.getElementById("revised_salary");
+    <div class="output">
+      <p class="label">Hike Percentage<span class="superscript">+</span></p>
+      <p class="result"><span id="calc-result" /> %</p>
+      <p class="note" id="opMessage">Congratualtions on getting Hike</p>
 
-          console.log(currentSalaryVar.value);
-          console.log(revisedSalaryVar.value);
+      <button class="button-37" onclick="location.href ='https://github.com/Upendra-Thunuguntla';" role="button">
+        <span class="text">My Github</span>
+      </button>
+      <button class="button-37" onclick="location.href ='https://www.linkedin.com/in/muralid25';" role="button">
+        <span class="text">My Linkedin</span>
+      </button>
+    </div>
+  </main>
+  <script>
+    var calcDisplay = document.getElementById("calc-result");
+    var opMessage = document.getElementById("opMessage");
+    var currentSalaryVar = document.getElementById("current_salary");
+    var revisedSalaryVar = document.getElementById("revised_salary");
 
-          calcDisplay.textContent = "---";
-		  opMessage.textContent = "";
-          function calcPercent() {
-            var currentSalary = Number(currentSalaryVar.value);
-            var revisedSalary = Number(revisedSalaryVar.value);
-            //calcuation
+    console.log(currentSalaryVar.value);
+    console.log(revisedSalaryVar.value);
 
-			if (revisedSalary < 0 || currentSalary < 0) {
-				calcDisplay.textContent = "Don't kid me bruhh !!!!";
-			} else if (revisedSalary > 0 && currentSalary > 0) {
-				var percentIncrease = ((revisedSalary - currentSalary) / currentSalary) * 100;
-				calcDisplay.textContent = parseFloat(percentIncrease).toFixed(2) + "%";
-				if (percentIncrease > 0) {
-					opMessage.textContent = "Congratualtions on getting Hike";
-				} else {
-					opMessage.textContent = "Sorry, you are not getting Hike";
-				}
-	
-			} 
-          }
+    calcDisplay.textContent = "---";
+    opMessage.textContent = "";
+    function calcPercent() {
+      var currentSalary = Number(currentSalaryVar.value);
+      var revisedSalary = Number(revisedSalaryVar.value);
+      //calcuation
 
-          currentSalaryVar.onkeyup = function () {
-              calcPercent();
-          };
+      if (revisedSalary < 0 || currentSalary < 0) {
+        calcDisplay.textContent = "Don't kid me bruhh !!!!";
+      } else if (revisedSalary >= 0 && currentSalary >= 0) {
+        var percentIncrease = ((revisedSalary - currentSalary) / currentSalary) * 100;
+        calcDisplay.textContent = parseFloat(percentIncrease).toFixed(2) + "%";
+        if (percentIncrease > 0) {
+          opMessage.textContent = "Congratualtions on getting Hike";
+        } else {
+          opMessage.textContent = "Sorry, you are not getting Hike";
+        }
+      }
+    }
 
-          revisedSalaryVar.onkeyup = function () {
-              calcPercent();
-          };
-    </script>
-  </body>
-  
+    currentSalaryVar.onkeyup = function () {
+      calcPercent();
+    };
+
+    revisedSalaryVar.onkeyup = function () {
+      calcPercent();
+    };
+  </script>
+</body>
+
 </html>
