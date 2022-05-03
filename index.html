@@ -59,7 +59,7 @@
 
       if (revisedSalary < 0 || currentSalary < 0) {
         calcDisplay.textContent = "Don't kid me bruhh !!!!";
-      } else if (revisedSalary >= 0 && currentSalary >= 0) {
+      } else if (revisedSalary > 0 && currentSalary > 0) {
         var percentIncrease = ((revisedSalary - currentSalary) / currentSalary) * 100;
         calcDisplay.textContent = parseFloat(percentIncrease).toFixed(2) + "%";
         if (percentIncrease > 0) {
