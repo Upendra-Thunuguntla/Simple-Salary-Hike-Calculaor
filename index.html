@@ -40,7 +40,19 @@
         <span class="text">My Linkedin</span>
       </button>
     </div>
+    <br>
+    <span id = "visits">Views</span>
   </main>
+  <script>
+    function load() {
+            document.getElementById("current_salary").focus();
+    
+          }
+    function cb(response) {
+        document.getElementById('visits').innerText = "Total Views : " + response.value;
+    }
+    </script>
+    <script async src="https://api.countapi.xyz/hit/salaryhikecalc/visits?callback=cb"></script>
   <script>
     var calcDisplay = document.getElementById("calc-result");
     var opMessage = document.getElementById("opMessage");
@@ -58,14 +70,14 @@
       //calcuation
 
       if (revisedSalary < 0 || currentSalary < 0) {
-        calcDisplay.textContent = "Don't kid me bruhh !!!!";
+        calcDisplay.textContent = "Don't kid me bruhh 😑😑";
       } else if (revisedSalary > 0 && currentSalary > 0) {
         var percentIncrease = ((revisedSalary - currentSalary) / currentSalary) * 100;
         calcDisplay.textContent = parseFloat(percentIncrease).toFixed(2) + "%";
         if (percentIncrease > 0) {
-          opMessage.textContent = "Congratualtions on getting Hike";
+          opMessage.textContent = "Congratualtions on getting Hike 🎉🎉🎉";
         } else {
-          opMessage.textContent = "Sorry, you are not getting Hike";
+          opMessage.textContent = "Sorry, you are not getting Hike 😢😢😢";
         }
       }
     }
