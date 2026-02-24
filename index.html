@@ -41,18 +41,18 @@
       </button>
     </div>
     <br>
-    <span id = "visits">Views</span>
+    <span id="visits">Views</span>
   </main>
   <script>
     function load() {
-            document.getElementById("current_salary").focus();
-    
-          }
-    function cb(response) {
-        document.getElementById('visits').innerText = "Total Views : " + response.value;
+      document.getElementById("current_salary").focus();
+
     }
-    </script>
-    <script async src="https://api.countapi.xyz/hit/salaryhikecalc/visits?callback=cb"></script>
+    function cb(response) {
+      document.getElementById('visits').innerText = "Total Views : " + response.value;
+    }
+  </script>
+  <script async src="https://api.countapi.xyz/hit/salaryhikecalc/visits?callback=cb"></script>
   <script>
     var calcDisplay = document.getElementById("calc-result");
     var opMessage = document.getElementById("opMessage");
@@ -90,6 +90,97 @@
       calcPercent();
     };
   </script>
+  <style>
+    .redirect-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      backdrop-filter: blur(4px);
+    }
+
+    .redirect-modal {
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      max-width: 450px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      margin: 20px;
+    }
+
+    .redirect-modal h3 {
+      margin-top: 0;
+      color: #1e293b;
+      font-size: 24px;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .redirect-modal p {
+      color: #475569;
+      margin-bottom: 24px;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .redirect-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 8px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .redirect-btn-primary {
+      background: #3b82f6;
+      color: white;
+      box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5);
+    }
+
+    .redirect-btn-primary:hover {
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .redirect-btn-secondary {
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    .redirect-btn-secondary:hover {
+      background: #e2e8f0;
+      color: #475569;
+      text-decoration: none;
+    }
+  </style>
+  <div class="redirect-overlay" id="redirectOverlay">
+    <div class="redirect-modal">
+      <h3>We've Moved! 🚀</h3>
+      <p>This tool is now part of the new <strong>Unified Developer Tools</strong> platform, featuring a better UI, dark
+        mode, and even more tools.</p>
+      <div>
+        <a href="https://upendra-thunuguntla.github.io/tools/salary-calc/"
+          class="redirect-btn redirect-btn-primary">Take me there</a>
+        <button onclick="document.getElementById('redirectOverlay').style.display='none'"
+          class="redirect-btn redirect-btn-secondary">Stay here</button>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
