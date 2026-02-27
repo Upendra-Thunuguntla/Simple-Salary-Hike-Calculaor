@@ -111,6 +111,8 @@
       padding: 32px;
       border-radius: 12px;
       max-width: 450px;
+      width: 90%;
+      height: auto;
       text-align: center;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       margin: 20px;
@@ -122,6 +124,7 @@
       font-size: 24px;
       margin-bottom: 16px;
       font-weight: 700;
+      height: auto;
     }
 
     .redirect-modal p {
@@ -129,6 +132,11 @@
       margin-bottom: 24px;
       line-height: 1.6;
       font-size: 16px;
+      height: auto;
+    }
+
+    .redirect-buttons {
+      height: auto;
     }
 
     .redirect-btn {
@@ -173,7 +181,7 @@
       <h3>We've Moved! 🚀</h3>
       <p>This tool is now part of the new <strong>Unified Developer Tools</strong> platform, featuring a better UI, dark
         mode, and even more tools.</p>
-      <div>
+      <div class="redirect-buttons">
         <a href="https://upendra-thunuguntla.github.io/tools/salary-calc/"
           class="redirect-btn redirect-btn-primary">Take me there</a>
         <button onclick="document.getElementById('redirectOverlay').style.display='none'"
